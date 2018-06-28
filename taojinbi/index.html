@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8"><title>淘金币领取</title><!-- 新 Bootstrap 核心 CSS 文件 --><link href="css/menu.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css" /><link rel="stylesheet" type="text/css" href="css/demo2.css"></head><body><center><img src="http://blog.hacka.cc/images/avatar.gif" id="logo"><br><p style="font-size:30px;">淘金币领取<br><div class="panel-body">     <a class="btn-slide2" target="_blank" href="https://blog.hacka.cc/taojinbi/index1.html">1号领取地址</a>   <a class="btn-slide2" target="_blank" href="https://blog.hacka.cc/taojinbi/index2.html">2号领取地址</a>  <a class="btn-slide2" target="_blank" href="https://taojinbi.taobao.com/coin/userCoinDetail.htm">查看淘金币记录</a>  <a class="btn-slide2" type="submit" href="https://market.m.taobao.com/markets/taojinbi/maochaohongbaoduihuan" rel="external nofollow" target="_blank">淘金币兑换天猫超市优惠券</a>  </div> <div id="coin" class="coin"><script>var Coin = true;</script></div> <br>  <div id="coin" class="coin"><script>var Coin = true;</script></div><script src="js/tjb.js"></script><hr /><hr />		<div class="demo2">			<div class="container">				<div class="row pad-15">					<div class="panel-body">										<p style="font-size:15px;">--------<br>					   <a class="btn-slide" href="http://www.hacka.cc/tao/" role="button" id="receive" >淘宝特价内部优惠券</a><a id="update"></a>      <a class="btn-slide2" target="_blank" href="https://blog.hacka.cc/">逍遥's Blog</a>    </div><!-- sakura shader -->
+</script>
+<script type="text/javascript">
+	(function(){
+	  var animenuToggle = document.querySelector('.animenu__toggle'),
+		  animenuNav    = document.querySelector('.animenu__nav'),
+		  hasClass = function( elem, className ) {
+			return new RegExp( ' ' + className + ' ' ).test( ' ' + elem.className + ' ' );
+		  },
+		  toggleClass = function( elem, className ) {
+			var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ' ) + ' ';
+			if( hasClass(elem, className ) ) {
+			  while( newClass.indexOf( ' ' + className + ' ' ) >= 0 ) {
+				newClass = newClass.replace( ' ' + className + ' ' , ' ' );
+			  }
+			  elem.className = newClass.replace( /^\s+|\s+$/g, '' );
+			} else {
+			  elem.className += ' ' + className;
+			}
+		  },           
+		  animenuToggleNav =  function (){        
+			toggleClass(animenuToggle, "animenu__toggle--active");
+			toggleClass(animenuNav, "animenu__nav--open");        
+		  }
+
+	  if (!animenuToggle.addEventListener) {
+		  animenuToggle.attachEvent("onclick", animenuToggleNav);
+	  }
+	  else {
+		  animenuToggle.addEventListener('click', animenuToggleNav);
+	  }
+	})()
+</script></style>
+</html>

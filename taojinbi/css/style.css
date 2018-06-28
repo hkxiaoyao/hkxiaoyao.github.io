@@ -1,0 +1,23 @@
+body {
+    /*移动设备背景图片*/
+    background-image: url("//oiqx1annh.qnssl.com/uploads/1703/121053571095.jpg");
+}
+.content {
+    /*移动设备中心区域背景颜色*/
+    background-color: #ddd;
+    /*移动设备中心区域不透明度*/
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 999px) {
+    body {
+        /*电脑设备背景图片*/
+        background-image: url("//oiqx1annh.qnssl.com/uploads/1703/110119008899.jpg");
+    }
+    .content {
+        /*电脑设备中心区域背景颜色*/
+        background-color: #ddd;
+        /*电脑设备中心区域不透明度*/
+        opacity: 0.8;
+    }
+}

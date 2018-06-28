@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="referrer" content="always">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="淘宝金币">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <title>淘宝金币一键领取</title>
+    <meta name="description" content="淘金币是淘宝网为用户提供的积分。淘金币频道优选全网30天最低价商品，持有淘金币的用户购买还能再用金币抵钱。此外，用户还可以用金币进行抽奖、秒杀、兑换超值物品等。">
+    <meta name="keywords" content="淘金币,领淘金币,赚淘金币,淘宝金币,一键领取淘宝金币,淘宝金币一键领取">
+    <link rel="canonical" href="http://www.duoduodazhe.com/App/Web/Taobao-Coin/" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="public/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//www.Chaidu.com/duoduo/Taobao-Coin/css/style.css" id="style">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="public/jQuery/jquery.min.js"></script>
+    <script src="public/clipboard.js/clipboard.min.js"></script>
+    <script src="public/Layer/layer.js"></script>
+    <script src="public/Push.js/push.min.js"></script>
+    <script src="js/ads.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/config.js?version=94c2cabf1a44c264cc0f2b3845d2a306" id="config"></script>
+    <script src="//www.Chaidu.com/duoduo/Taobao-Coin/js/app.js"></script>
+</head>
+<body id="page" class="page">
+<header>
+    <nav class="navbar navbar-default navbar-static-top hidden-xs" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.duoduodazhe.com/" target="_blank">多多打折</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav" id="tab">
+                    <li><a href="http://www.duoduodazhe.com/" target="_blank">网站主页</a></li>
+                    <li class="active"><a href="javascript:void(0)">淘宝金币</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://www.duoduodazhe.com/" target="_blank">多多打折</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content" class="container content">
+    <div id="Clock" class="clock hidden-sm"></div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8">
+            <div class="panel panel-primary" id="Coin">
+                <div class="panel-heading" id="Coin-head">
+                    <h3 class="panel-title">淘宝金币一键领取</h3>
+                </div>
+                <div class="panel-body" id="Coin-body">
+                    <button id="start1" type="button" class="btn btn-primary btn-lg btn-block">登录淘宝</button>
+                    <button id="start2" type="button" class="btn btn-primary btn-lg btn-block">领取金币</button>
+                    <button id="start3" type="button" class="btn btn-primary btn-lg btn-block">查看金币</button>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">淘宝金币相关网站</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>金币抢购：<a href="https://taojinbi.taobao.com/half/list.htm" rel="external nofollow" target="_blank">https://taojinbi.taobao.com/half/list.htm</a></li>
+                        <li>金币秒杀：<a href="https://www.taobao.com/markets/taojinbi/miaosha" rel="external nofollow" target="_blank">https://www.taobao.com/markets/taojinbi/miaosha</a></li>
+                        <li>金币兑换：<a href="https://h5.m.taobao.com/app/tjb/www/coin-exchange/index.html" rel="external nofollow" target="_blank">https://h5.m.taobao.com/app/tjb/www/coin-exchange/index.html</a></li>
+                        <li>阿里小号：<a href="https://h5.m.taobao.com/aliqin/priv/tjb.html" rel="external nofollow" target="_blank">https://h5.m.taobao.com/aliqin/priv/tjb.html</a></li>
+                        <li>外卖粮票：<a href="https://market.m.taobao.com/markets/taojinbi/liangpiao" rel="external nofollow" target="_blank">https://market.m.taobao.com/markets/taojinbi/liangpiao</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">网络购物相关网站</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>淘宝商城：<a href="https://www.taobao.com/" target="_blank">https://www.taobao.com</a></li>
+                        <li>天猫商城：<a href="https://www.tmall.com/" target="_blank">https://www.tmall.com</a></li>
+                        <li>京东商城：<a href="https://www.jd.com/" target="_blank">https://www.jd.com</a></li>
+                        <li>苏宁易购：<a href="https://www.suning.com/" target="_blank">https://www.suning.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">网络导购相关网站</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li>多多打折：<a href="http://www.duoduodazhe.com/" target="_blank">http://www.duoduodazhe.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+            <div class="panel panel-primary" id="Notice">
+                <div class="panel-heading" id="Notice-head">
+                    <h3 class="panel-title text-center">网站公告</h3>
+                </div>
+                <div class="panel-body" id="Notice-body">
+                    <p>每天一键领取<code>100+</code>淘宝金币！</p>
+                </div>
+            </div>
+            <div class="panel panel-primary hidden-xs hidden-sm">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">扫码访问</h3>
+                </div>
+                <div class="panel-body text-center" id="Quick-Response-Code">
+                    <img src="images/transparent.gif">
+                </div>
+            </div>
+            <div class="panel panel-primary panel-ad01" id="right-ad01">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="right-ad01-head">右侧广告</h3>
+                </div>
+                <div class="panel-body text-center ads" id="right-ad01-body"><!--橱窗推广・禁止占用--></div>
+            </div>
+            <div class="panel panel-primary panel-ad02" id="right-ad02">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="right-ad02-head">右二广告</h3>
+                </div>
+                <div class="panel-body text-center ads" id="right-ad02-body"><!--广告内容--></div>
+            </div>
+            <div class="panel panel-primary panel-ad03" id="right-ad03">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="right-ad03-head">右三广告</h3>
+                </div>
+                <div class="panel-body text-center ads" id="right-ad03-body"><!--广告内容--></div>
+            </div>
+            <div class="panel panel-primary panel-ad04" id="right-ad04">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="right-ad04-head">右四广告</h3>
+                </div>
+                <div class="panel-body text-center ads" id="right-ad04-body"><!--广告内容--></div>
+            </div>
+            <div class="panel panel-primary panel-ad05" id="right-ad05">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="right-ad05-head">右五广告</h3>
+                </div>
+                <div class="panel-body text-center ads" id="right-ad05-body"><!--广告内容--></div>
+            </div>
+            <div class="panel panel-primary panel-ad06" id="right-ad06">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="right-ad06-head">右六广告</h3>
+                </div>
+                <div class="panel-body text-center ads" id="right-ad06-body"><!--广告内容--></div>
+            </div>
+            <div class="panel panel-primary panel-ad07" id="right-ad07">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="right-ad07-head">右七广告</h3>
+                </div>
+                <div class="panel-body text-center ads" id="right-ad07-body"><!--广告内容--></div>
+            </div>
+            <div class="panel panel-primary panel-ad08" id="right-ad08">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center" id="right-ad08-head">右八广告</h3>
+                </div>
+                <div class="panel-body text-center ads" id="right-ad08-body"><!--广告内容--></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="app" class="app"></div>
+
+<div id="GoTop" class="GoTop"></div>
+<div id="Remind" class="remind"></div>
+<div id="Share" class="share"></div>
+<div id="Update" class="update"></div>
+<footer>
+    <div id="copyright" class="copyright text-center">
+        <span>Copyright &copy; 2017 <a href="javascript:void(0)"><script>document.write(name);</script></a> All Rights Reserved.</span>　<span>Powered By <a href="http://www.duoduodazhe.com/" target="_blank" title="多多打折">多多打折</a>.</span>
+    </div>
+    <script src="//www.Chaidu.com/duoduo/Taobao-Coin/js/footer.js"></script>
+    <div class="hidden">
+        <script>
+            // 网站统计代码区域
+        </script>
+    </div>
+</footer>
+</body>
+</html>
