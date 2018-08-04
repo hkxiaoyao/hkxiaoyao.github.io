@@ -108,18 +108,22 @@
 
 
 
-  <meta name="description" content="使用微信自定义分享，可以按照自己喜欢的样式，达到更好的宣传效果，本文仅作为笔记，及记录开发过程中遇到的大坑  需要做的提前准备 微信 认证 公众号（测试过程中我用的是测试公众号，所以导致遇到了大坑） 测试账号申请地址：微信公众平台接口测试帐号申请    2.">
+  <meta name="description" content="使用微信自定义分享，可以按照自己喜欢的样式，达到更好的宣传效果，本文仅作为笔记，及记录开发过程中遇到的大坑  需要准备的 微信认证公众号（测试过程中我用的是测试公众号，所以导致遇到了大坑） 测试账号申请地址：微信公众平台接口测试帐号申请     备案域名以及服务器（必需备案域名）  几个调试工具 微信公众平台接口调试工具 微信web开发者工具 微信 JS 接口签名校验工具 当然  还有最最最重要">
 <meta name="keywords" content="PHP开发,微信开发,自定义分享,PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信自定义分享以及踩的坑">
 <meta property="og:url" content="http://blog.hacka.cc/2018/08/04/微信自定义分享以及踩的坑/index.html">
 <meta property="og:site_name" content="逍遥`s Blog">
-<meta property="og:description" content="使用微信自定义分享，可以按照自己喜欢的样式，达到更好的宣传效果，本文仅作为笔记，及记录开发过程中遇到的大坑  需要做的提前准备 微信 认证 公众号（测试过程中我用的是测试公众号，所以导致遇到了大坑） 测试账号申请地址：微信公众平台接口测试帐号申请    2.">
+<meta property="og:description" content="使用微信自定义分享，可以按照自己喜欢的样式，达到更好的宣传效果，本文仅作为笔记，及记录开发过程中遇到的大坑  需要准备的 微信认证公众号（测试过程中我用的是测试公众号，所以导致遇到了大坑） 测试账号申请地址：微信公众平台接口测试帐号申请     备案域名以及服务器（必需备案域名）  几个调试工具 微信公众平台接口调试工具 微信web开发者工具 微信 JS 接口签名校验工具 当然  还有最最最重要">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://xiaoyaoblog.hacka.cc/18-8-4/28123257.jpg">
+<meta property="og:image" content="http://xiaoyaoblog.hacka.cc/18-8-4/95095041.jpg">
+<meta property="og:image" content="http://xiaoyaoblog.hacka.cc/18-8-4/82528348.jpg">
 <meta property="og:updated_time" content="2018-08-04T01:57:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信自定义分享以及踩的坑">
-<meta name="twitter:description" content="使用微信自定义分享，可以按照自己喜欢的样式，达到更好的宣传效果，本文仅作为笔记，及记录开发过程中遇到的大坑  需要做的提前准备 微信 认证 公众号（测试过程中我用的是测试公众号，所以导致遇到了大坑） 测试账号申请地址：微信公众平台接口测试帐号申请    2.">
+<meta name="twitter:description" content="使用微信自定义分享，可以按照自己喜欢的样式，达到更好的宣传效果，本文仅作为笔记，及记录开发过程中遇到的大坑  需要准备的 微信认证公众号（测试过程中我用的是测试公众号，所以导致遇到了大坑） 测试账号申请地址：微信公众平台接口测试帐号申请     备案域名以及服务器（必需备案域名）  几个调试工具 微信公众平台接口调试工具 微信web开发者工具 微信 JS 接口签名校验工具 当然  还有最最最重要">
+<meta name="twitter:image" content="http://xiaoyaoblog.hacka.cc/18-8-4/28123257.jpg">
 
 
 
@@ -483,12 +487,77 @@
         <blockquote>
 <p>使用微信自定义分享，可以按照自己喜欢的样式，达到更好的宣传效果，本文仅作为笔记，及记录开发过程中遇到的<strong>大坑</strong></p>
 </blockquote>
-<h2 id="需要做的提前准备"><a href="#需要做的提前准备" class="headerlink" title="需要做的提前准备"></a>需要做的提前准备</h2><ol>
-<li><p>微信 <strong>认证</strong> 公众号（测试过程中我用的是测试公众号，所以导致遇到了大坑）</p>
+<h2 id="需要准备的"><a href="#需要准备的" class="headerlink" title="需要准备的"></a>需要准备的</h2><ol>
+<li><p>微信<strong>认证</strong>公众号（测试过程中我用的是测试公众号，所以导致遇到了大坑）</p>
 <p>测试账号申请地址：<a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="noopener">微信公众平台接口测试帐号申请 </a></p>
 </li>
 </ol>
-<p>2. </p>
+<ol start="2">
+<li><p>备案域名以及服务器（必需备案域名）</p>
+</li>
+<li><p>几个调试工具</p>
+<p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E5%9F%BA%E7%A1%80%E6%94%AF%E6%8C%81&amp;form=%E8%8E%B7%E5%8F%96access_token%E6%8E%A5%E5%8F%A3%20/token" target="_blank" rel="noopener">微信公众平台接口调试工具</a></p>
+<p><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1455784140" target="_blank" rel="noopener">微信web开发者工具</a></p>
+<p><a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign" target="_blank" rel="noopener">微信 JS 接口签名校验工具</a></p>
+<p>当然  还有最最最重要的 <a href="https://mp.weixin.qq.com/wiki" target="_blank" rel="noopener">微信公众平台开发者文档</a></p>
+</li>
+</ol>
+<h2 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h2><h3 id="1-绑定域名"><a href="#1-绑定域名" class="headerlink" title="1.绑定域名"></a>1.绑定域名</h3><p>先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”（就是发布用的那个域名） </p>
+<p><img src="http://xiaoyaoblog.hacka.cc/18-8-4/28123257.jpg" alt=""></p>
+<p>假如用的是测试号的话  如图</p>
+<p><img src="http://xiaoyaoblog.hacka.cc/18-8-4/95095041.jpg" alt=""></p>
+<h3 id="2-获取access-token"><a href="#2-获取access-token" class="headerlink" title="2.获取access_token"></a>2.获取access_token</h3><p>这部分工作属于后台开发，主要功能是利用公共号<code>APPID</code>、<code>APPSECRET</code>从微信服务器获取对应的<code>access_token</code>。由于这部分代码官方有demo，所以直接用官方的sample例子做演示。 下载<a href="http://demo.open.weixin.qq.com/jssdk/sample.zip" target="_blank" rel="noopener">官方示例代码</a>后，根据自己的情况选择对应的后台语言(这里以<code>PHP</code>为例)。 </p>
+<ol>
+<li>将下载得到的压缩包解压后复制<code>php</code>文件夹到网站根目录，然后将需要分享出去的html文件的后缀名改为<code>.php</code>（必须。因为后台不完善所以不能直接ajax获得<code>access_token</code>的值，这里假设需要分享的html页面是<code>index.php</code>）</li>
+<li>打开<code>index.php</code>，在html的<code>DOCTYPE</code>声明之前添加一段PHP代码：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">require_once &quot;../php/jssdk.php&quot;;/* 这里的文件路径视`php`文件夹所在路径而定。不一定都要一样，个人建议扔到一个所有html文件夹都可以引用的目录*/</span><br><span class="line">$jssdk = new JSSDK(&quot;你的APPID&quot;, &quot;你的APPSECRET&quot;);</span><br><span class="line">$signPackage = $jssdk-&gt;GetSignPackage();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的后台代码都是直接拿的官方，小站点可以直接利用，但是大站点请勿直接使用，因为官方的后台代码没有缓存<code>access_token</code>，<strong>很容易触发每日的2k次API调用上限</strong>，一旦到了上限，当天就无法继续认证。所以建议有能力的不要直接用官方的示例代码。AppID和AppSecret可在微信公众平台官网-开发者中心页中获得（需要已经成为开发者，且帐号没有异常状态） </p>
+</blockquote>
+<h3 id="3-前端配置验证权限"><a href="#3-前端配置验证权限" class="headerlink" title="3.前端配置验证权限"></a>3.前端配置验证权限</h3><p>这里是前端的工作，主要是利用前一步得到的<code>access_token</code>来获取签名等认证信息，只有正确的配置才可以正常获取到使用官方js-sdk的权限。 </p>
+<p>1.引入JS文件 在<code>index.php</code>文件里添加一个<code>script</code>标签，引用官方js： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://res.wx.qq.com/open/js/jweixin-1.0.0.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>①通过config接口注入权限验证配置 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    wx.config(&#123;</span><br><span class="line">        debug: false,// 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。移动端会通过弹窗来提示相关信息。如果分享信息配置不正确的话，可以开了看对应报错信息</span><br><span class="line">        appId: &apos;&lt;?php echo $signPackage[&quot;appId&quot;];?&gt;&apos;,</span><br><span class="line">        timestamp: &apos;&lt;?php echo $signPackage[&quot;timestamp&quot;];?&gt;&apos;,</span><br><span class="line">        nonceStr: &apos;&lt;?php echo $signPackage[&quot;nonceStr&quot;];?&gt;&apos;,</span><br><span class="line">        signature: &apos;&lt;?php echo $signPackage[&quot;signature&quot;];?&gt;&apos;,</span><br><span class="line">        jsApiList: [//需要使用的JS接口列表,分享默认这几个，如果有其他的功能比如图片上传之类的，需要添加对应api进来</span><br><span class="line">            &apos;checkJsApi&apos;,</span><br><span class="line">            &apos;onMenuShareTimeline&apos;,//</span><br><span class="line">            &apos;onMenuShareAppMessage&apos;,</span><br><span class="line">            &apos;onMenuShareQQ&apos;,</span><br><span class="line">            &apos;onMenuShareWeibo&apos;</span><br><span class="line">        ]</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 上面的属性都是必须的，不过都不需要自行填写。这里只使用了几个分享相关的<code>jsApiList</code>，完整列表见<a href="http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html#.E9.99.84.E5.BD.952-.E6.89.80.E6.9C.89JS.E6.8E.A5.E5.8F.A3.E5.88.97.E8.A1.A8" target="_blank" rel="noopener">官网说明</a> </p>
+</blockquote>
+<p>②配置分享信息并通过ready接口处理 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">window.share_config = &#123;</span><br><span class="line">     &quot;share&quot;: &#123;</span><br><span class="line">        &quot;imgUrl&quot;: &quot;http://www.yourwebsite.com/share.png&quot;,//分享图，默认当相对路径处理，所以使用绝对路径的的话，“http://”协议前缀必须在。</span><br><span class="line">        &quot;desc&quot; : &quot;你对页面的描述&quot;,//摘要,如果分享到朋友圈的话，不显示摘要。</span><br><span class="line">        &quot;title&quot; : &apos;分享卡片的标题&apos;,//分享卡片标题</span><br><span class="line">        &quot;link&quot;: window.location.href,//分享出去后的链接，这里可以将链接设置为另一个页面。</span><br><span class="line">        &quot;success&quot;:function()&#123;//分享成功后的回调函数</span><br><span class="line">        &#125;,</span><br><span class="line">        &apos;cancel&apos;: function () &#123; </span><br><span class="line">            // 用户取消分享后执行的回调函数</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;  </span><br><span class="line">    wx.ready(function () &#123;</span><br><span class="line">    wx.onMenuShareAppMessage(share_config.share);//分享给好友</span><br><span class="line">    wx.onMenuShareTimeline(share_config.share);//分享到朋友圈</span><br><span class="line">    wx.onMenuShareQQ(share_config.share);//分享给手机QQ</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>share_config</code>里的四个属性在分享卡片里代表的含义如下图所示： </p>
+<p>img:</p>
+<p><img src="http://xiaoyaoblog.hacka.cc/18-8-4/82528348.jpg" alt=""></p>
+</blockquote>
+<p>到这里配置完成。正常情况下的话分享出去是会有摘要和分享图的。 </p>
+<h2 id="分享信息配置失败的调试方法"><a href="#分享信息配置失败的调试方法" class="headerlink" title="分享信息配置失败的调试方法"></a>分享信息配置失败的调试方法</h2><p>有时候设置好之后发现分享出去只有标题和一张和设置不一样的图片，摘要变成了页面链接。这就说明配置失败了。对于没有正确配置的页面，微信默认抓取网页标题和页面内第一张分辨率大于<code>300*300</code>的图片做分享图，而摘要则是替换成页面链接——这种情况从用户的角度看来并不友好。所幸对于配置失败的页面，微信也给了调试接口，官方也有<a href="http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html#.E9.99.84.E5.BD.955-.E5.B8.B8.E8.A7.81.E9.94.99.E8.AF.AF.E5.8F.8A.E8.A7.A3.E5.86.B3.E6.96.B9.E6.B3.95" target="_blank" rel="noopener">部分说明</a>。 </p>
+<ol>
+<li><p>打开<code>wx.config</code>里的<code>debug</code><br>将<code>debug</code>设置为<code>true</code>之后，手机进入页面，会弹出错误信息(PC不管有没有配置正确都会在开发者工具中打印出对应的分享信息，参考意义不是很大——不过可以拿来查看链接是否有误)。<br>如果正确的话，会提示<code>{&quot;errMsg&quot;：&quot;config:ok&quot;}</code>。</p>
+</li>
+<li><p><strong>提示{“errMsg”：”config:invalid url domain”}</strong></p>
+<p>这个最常见，主要是域名没有被添加为<code>js接口安全域名</code>。官方的说明里是要域名和使用的<code>APPID</code>对应的公共号绑定，不过我实际使用中发现应该也可以分离。另外如果使用了端口号，则配置的绑定域名也要加上端口号（一个appid可以绑定三个有效域名) </p>
+</li>
+<li><p><strong>提示{“errMsg”：”config:invalid signature”}</strong></p>
+<p>造成这个情况的可能性比较多。不过主要有以下三个原因：</p>
+<p>① <code>APPID</code>和<code>APPSECRET</code>填错了。<br>可以到官方的调试页面获取access_token看看是否是正确的</p>
+<p>② 超过了每日的access_token获取上限<br>官方限定每日2k次请求。所以如果没有缓存access_token的话，还是比较容易过限的。</p>
+<p>③ 微信公共号状态不正常。<br>比如验证过期了，被封禁了等等。</p>
+</li>
+<li><p>####常用的接口调试链接以及说明文档：#### </p>
+<p>获取access_token <a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E5%9F%BA%E7%A1%80%E6%94%AF%E6%8C%81&amp;form=%E8%8E%B7%E5%8F%96access_token%E6%8E%A5%E5%8F%A3%20/token" target="_blank" rel="noopener">https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E5%9F%BA%E7%A1%80%E6%94%AF%E6%8C%81&amp;form=%E8%8E%B7%E5%8F%96access_token%E6%8E%A5%E5%8F%A3%20/token</a> </p>
+<blockquote>
+<p>根据返回的结果可以判断页面内的<code>APPID</code>和<code>APPSECRET</code>有没有出错 </p>
+</blockquote>
+<p>获取jsapi_ticket <a href="https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&amp;type=jsapi" target="_blank" rel="noopener">https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&amp;type=jsapi</a> </p>
+<blockquote>
+<p>利用前面拿到的access_token 采用http GET方式请求获得jsapi_ticket，如果出错的话会返回对应的说明。 </p>
+</blockquote>
+<p>全局返回码说明 </p>
+<p>全局返回码说明<br><a href="http://mp.weixin.qq.com/wiki/17/fa4e1434e57290788bde25603fa2fcbd.html" target="_blank" rel="noopener">http://mp.weixin.qq.com/wiki/17/fa4e1434e57290788bde25603fa2fcbd.html</a></p>
+<p>接口频率限制说明<br><a href="http://mp.weixin.qq.com/wiki/0/2e2239fa5f49388d5b5136ecc8e0e440.html" target="_blank" rel="noopener">http://mp.weixin.qq.com/wiki/0/2e2239fa5f49388d5b5136ecc8e0e440.html</a></p>
+</li>
+</ol>
 
       
     </div>
@@ -842,7 +911,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要做的提前准备"><span class="nav-number">1.</span> <span class="nav-text">需要做的提前准备</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要准备的"><span class="nav-number">1.</span> <span class="nav-text">需要准备的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置过程"><span class="nav-number">2.</span> <span class="nav-text">配置过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-绑定域名"><span class="nav-number">2.1.</span> <span class="nav-text">1.绑定域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-获取access-token"><span class="nav-number">2.2.</span> <span class="nav-text">2.获取access_token</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-前端配置验证权限"><span class="nav-number">2.3.</span> <span class="nav-text">3.前端配置验证权限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分享信息配置失败的调试方法"><span class="nav-number">3.</span> <span class="nav-text">分享信息配置失败的调试方法</span></a></li></ol></div>
             
 
           </div>
